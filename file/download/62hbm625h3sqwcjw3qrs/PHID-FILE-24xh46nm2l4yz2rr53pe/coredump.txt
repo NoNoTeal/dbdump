@@ -1,0 +1,441 @@
+May 04 16:15:35 audit[752176]: ANOM_ABEND auid=1000 uid=1000 gid=1000 ses=1 pid=752176 comm="DesktopMediaLis" exe="/opt/discord-canary/DiscordCanary" sig=11 res=1
+May 04 16:15:35 kernel: DesktopMediaLis[2403590]: segfault at 30 ip 00007fd650cbd61f sp 00007fd645450140 error 4 in libX11.so.6.4.0[7fd650c98000+8a000]
+May 04 16:15:35 kernel: Code: 55 41 54 55 53 48 83 ec 28 48 89 34 24 89 54 24 08 89 4c 24 0c 64 48 8b 04 25 28 00 00 00 48 89 44 24 18 48 8b 87 30 0a 00 00 <48> 83 78 30 00 0f 85 75 04 00 00 48 8b 97 f8 00 00 00 49 89 ff 83
+May 04 16:15:35 kernel: audit: type=1701 audit(1620170135.555:1770): auid=1000 uid=1000 gid=1000 ses=1 pid=752176 comm="DesktopMediaLis" exe="/opt/discord-canary/DiscordCanary" sig=11 res=1
+May 04 16:15:35 audit: BPF prog-id=195 op=LOAD
+May 04 16:15:35 audit: BPF prog-id=196 op=LOAD
+May 04 16:15:35 audit: BPF prog-id=197 op=LOAD
+May 04 16:15:35 systemd[1]: Started Process Core Dump (PID 2403597/UID 0).
+May 04 16:15:35 audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-coredump@21-2403597-0 comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+May 04 16:15:35 kernel: audit: type=1334 audit(1620170135.592:1771): prog-id=195 op=LOAD
+May 04 16:15:35 kernel: audit: type=1334 audit(1620170135.592:1772): prog-id=196 op=LOAD
+May 04 16:15:35 kernel: audit: type=1334 audit(1620170135.592:1773): prog-id=197 op=LOAD
+May 04 16:15:35 kernel: audit: type=1130 audit(1620170135.592:1774): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-coredump@21-2403597-0 comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+May 04 16:15:36 systemd-coredump[2403598]: Process 752176 (DiscordCanary) of user 1000 dumped core.
+                                           
+                                           Stack trace of thread 2403590:
+                                           #0  0x00007fd650cbd61f _XReply (libX11.so.6 + 0x4161f)
+                                           #1  0x00007fd650ca9fc3 XListExtensions (libX11.so.6 + 0x2dfc3)
+                                           #2  0x0000558f48e2db4b n/a (DiscordCanary + 0x4983b4b)
+                                           #3  0x0000558f481a2603 n/a (DiscordCanary + 0x3cf8603)
+                                           #4  0x0000558f481b3114 n/a (DiscordCanary + 0x3d09114)
+                                           #5  0x0000558f481b2ea2 n/a (DiscordCanary + 0x3d08ea2)
+                                           #6  0x0000558f48174571 n/a (DiscordCanary + 0x3cca571)
+                                           #7  0x0000558f481b3704 n/a (DiscordCanary + 0x3d09704)
+                                           #8  0x0000558f4818d6de n/a (DiscordCanary + 0x3ce36de)
+                                           #9  0x0000558f481c90e7 n/a (DiscordCanary + 0x3d1f0e7)
+                                           #10 0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #11 0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #12 0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752212:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f4b889289 uv_cond_wait (DiscordCanary + 0x73df289)
+                                           #3  0x0000558f4b7fbfa8 n/a (DiscordCanary + 0x7351fa8)
+                                           #4  0x0000558f4b7f9dbf n/a (DiscordCanary + 0x734fdbf)
+                                           #5  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #6  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752213:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f4b889289 uv_cond_wait (DiscordCanary + 0x73df289)
+                                           #3  0x0000558f4b7fbfa8 n/a (DiscordCanary + 0x7351fa8)
+                                           #4  0x0000558f4b7f9dbf n/a (DiscordCanary + 0x734fdbf)
+                                           #5  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #6  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752220:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651127b98 __new_sem_wait_slow64.constprop.0 (libpthread.so.0 + 0x11b98)
+                                           #2  0x0000558f4b8890e7 uv_sem_wait (DiscordCanary + 0x73df0e7)
+                                           #3  0x0000558f4b8406d3 n/a (DiscordCanary + 0x73966d3)
+                                           #4  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #5  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752245:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f4b889289 uv_cond_wait (DiscordCanary + 0x73df289)
+                                           #3  0x0000558f4b8797fa n/a (DiscordCanary + 0x73cf7fa)
+                                           #4  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #5  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752200:
+                                           #0  0x00007fd64fa9839e epoll_wait (libc.so.6 + 0xff39e)
+                                           #1  0x0000558f483066aa n/a (DiscordCanary + 0x3e5c6aa)
+                                           #2  0x0000558f48303eeb n/a (DiscordCanary + 0x3e59eeb)
+                                           #3  0x0000558f4820dda3 n/a (DiscordCanary + 0x3d63da3)
+                                           #4  0x0000558f481b3704 n/a (DiscordCanary + 0x3d09704)
+                                           #5  0x0000558f4818d6de n/a (DiscordCanary + 0x3ce36de)
+                                           #6  0x0000558f481bda84 n/a (DiscordCanary + 0x3d13a84)
+                                           #7  0x0000558f481c90e7 n/a (DiscordCanary + 0x3d1f0e7)
+                                           #8  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #9  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #10 0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752225:
+                                           #0  0x00007fd64fa8d37f __poll (libc.so.6 + 0xf437f)
+                                           #1  0x00007fd651023ae8 n/a (libglib-2.0.so.0 + 0xa7ae8)
+                                           #2  0x00007fd650fcf593 g_main_loop_run (libglib-2.0.so.0 + 0x53593)
+                                           #3  0x00007fd650ebf558 n/a (libgio-2.0.so.0 + 0x102558)
+                                           #4  0x00007fd650ffe0c1 n/a (libglib-2.0.so.0 + 0x820c1)
+                                           #5  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #6  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752232:
+                                           #0  0x00007fd65112887c read (libpthread.so.0 + 0x1287c)
+                                           #1  0x0000558f45d8e48f n/a (DiscordCanary + 0x18e448f)
+                                           #2  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #3  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #4  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752261:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f481fedb8 n/a (DiscordCanary + 0x3d54db8)
+                                           #3  0x0000558f481ff569 n/a (DiscordCanary + 0x3d55569)
+                                           #4  0x0000558f481ff32f n/a (DiscordCanary + 0x3d5532f)
+                                           #5  0x0000558f48174588 n/a (DiscordCanary + 0x3cca588)
+                                           #6  0x0000558f481b3704 n/a (DiscordCanary + 0x3d09704)
+                                           #7  0x0000558f4818d6de n/a (DiscordCanary + 0x3ce36de)
+                                           #8  0x0000558f481c90e7 n/a (DiscordCanary + 0x3d1f0e7)
+                                           #9  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #10 0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #11 0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752178:
+                                           #0  0x00007fd64fa8d37f __poll (libc.so.6 + 0xf437f)
+                                           #1  0x0000558f479ba812 n/a (DiscordCanary + 0x3510812)
+                                           #2  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #3  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #4  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 2403595:
+                                           #0  0x00007fd64fafd9f0 __memset_avx2_unaligned_erms (libc.so.6 + 0x1649f0)
+                                           #1  0x0000558f488f5a32 n/a (DiscordCanary + 0x444ba32)
+                                           #2  0x0000558f488eac6b n/a (DiscordCanary + 0x4440c6b)
+                                           #3  0x0000558f4b60498d n/a (DiscordCanary + 0x715a98d)
+                                           #4  0x0000558f481a2603 n/a (DiscordCanary + 0x3cf8603)
+                                           #5  0x0000558f481b3114 n/a (DiscordCanary + 0x3d09114)
+                                           #6  0x0000558f481b2ea2 n/a (DiscordCanary + 0x3d08ea2)
+                                           #7  0x0000558f48174571 n/a (DiscordCanary + 0x3cca571)
+                                           #8  0x0000558f481b3704 n/a (DiscordCanary + 0x3d09704)
+                                           #9  0x0000558f4818d6de n/a (DiscordCanary + 0x3ce36de)
+                                           #10 0x0000558f481c90e7 n/a (DiscordCanary + 0x3d1f0e7)
+                                           #11 0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #12 0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #13 0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 1896825:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125574 pthread_cond_timedwait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf574)
+                                           #2  0x0000558f481feed0 n/a (DiscordCanary + 0x3d54ed0)
+                                           #3  0x0000558f481ff540 n/a (DiscordCanary + 0x3d55540)
+                                           #4  0x0000558f481c4a98 n/a (DiscordCanary + 0x3d1aa98)
+                                           #5  0x0000558f481c5283 n/a (DiscordCanary + 0x3d1b283)
+                                           #6  0x0000558f481c4fa4 n/a (DiscordCanary + 0x3d1afa4)
+                                           #7  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #8  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #9  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752202:
+                                           #0  0x00007fd64fa9839e epoll_wait (libc.so.6 + 0xff39e)
+                                           #1  0x0000558f483066aa n/a (DiscordCanary + 0x3e5c6aa)
+                                           #2  0x0000558f48303eeb n/a (DiscordCanary + 0x3e59eeb)
+                                           #3  0x0000558f4820dd01 n/a (DiscordCanary + 0x3d63d01)
+                                           #4  0x0000558f481b3704 n/a (DiscordCanary + 0x3d09704)
+                                           #5  0x0000558f4818d6de n/a (DiscordCanary + 0x3ce36de)
+                                           #6  0x0000558f47686c84 n/a (DiscordCanary + 0x31dcc84)
+                                           #7  0x0000558f481c90e7 n/a (DiscordCanary + 0x3d1f0e7)
+                                           #8  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #9  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #10 0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 1896836:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125574 pthread_cond_timedwait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf574)
+                                           #2  0x0000558f481feed0 n/a (DiscordCanary + 0x3d54ed0)
+                                           #3  0x0000558f481ff540 n/a (DiscordCanary + 0x3d55540)
+                                           #4  0x0000558f481c4a98 n/a (DiscordCanary + 0x3d1aa98)
+                                           #5  0x0000558f481c5283 n/a (DiscordCanary + 0x3d1b283)
+                                           #6  0x0000558f481c4fa4 n/a (DiscordCanary + 0x3d1afa4)
+                                           #7  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #8  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #9  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 753537:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f481fedb8 n/a (DiscordCanary + 0x3d54db8)
+                                           #3  0x0000558f48efae59 n/a (DiscordCanary + 0x4a50e59)
+                                           #4  0x0000558f48efad39 n/a (DiscordCanary + 0x4a50d39)
+                                           #5  0x0000558f48efdba0 n/a (DiscordCanary + 0x4a53ba0)
+                                           #6  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #7  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #8  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752203:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125574 pthread_cond_timedwait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf574)
+                                           #2  0x0000558f481feed0 n/a (DiscordCanary + 0x3d54ed0)
+                                           #3  0x0000558f481ff540 n/a (DiscordCanary + 0x3d55540)
+                                           #4  0x0000558f48174567 n/a (DiscordCanary + 0x3cca567)
+                                           #5  0x0000558f481b3704 n/a (DiscordCanary + 0x3d09704)
+                                           #6  0x0000558f4818d6de n/a (DiscordCanary + 0x3ce36de)
+                                           #7  0x0000558f481c90e7 n/a (DiscordCanary + 0x3d1f0e7)
+                                           #8  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #9  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #10 0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752199:
+                                           #0  0x00007fd64fa6510f wait4 (libc.so.6 + 0xcc10f)
+                                           #1  0x0000558f481fddfd n/a (DiscordCanary + 0x3d53dfd)
+                                           #2  0x0000558f481fb400 n/a (DiscordCanary + 0x3d51400)
+                                           #3  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #4  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #5  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 2403596:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f481fedb8 n/a (DiscordCanary + 0x3d54db8)
+                                           #3  0x0000558f481ff569 n/a (DiscordCanary + 0x3d55569)
+                                           #4  0x0000558f481ff32f n/a (DiscordCanary + 0x3d5532f)
+                                           #5  0x0000558f48174588 n/a (DiscordCanary + 0x3cca588)
+                                           #6  0x0000558f481b3704 n/a (DiscordCanary + 0x3d09704)
+                                           #7  0x0000558f4818d6de n/a (DiscordCanary + 0x3ce36de)
+                                           #8  0x0000558f481c90e7 n/a (DiscordCanary + 0x3d1f0e7)
+                                           #9  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #10 0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #11 0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752210:
+                                           #0  0x00007fd64fa9839e epoll_wait (libc.so.6 + 0xff39e)
+                                           #1  0x0000558f4b88bda3 n/a (DiscordCanary + 0x73e1da3)
+                                           #2  0x0000558f4b87cf41 uv_run (DiscordCanary + 0x73d2f41)
+                                           #3  0x0000558f4b7fbda8 n/a (DiscordCanary + 0x7351da8)
+                                           #4  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #5  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 2403591:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f481fedb8 n/a (DiscordCanary + 0x3d54db8)
+                                           #3  0x0000558f481ff569 n/a (DiscordCanary + 0x3d55569)
+                                           #4  0x0000558f481ff32f n/a (DiscordCanary + 0x3d5532f)
+                                           #5  0x0000558f48174588 n/a (DiscordCanary + 0x3cca588)
+                                           #6  0x0000558f481b3704 n/a (DiscordCanary + 0x3d09704)
+                                           #7  0x0000558f4818d6de n/a (DiscordCanary + 0x3ce36de)
+                                           #8  0x0000558f481c90e7 n/a (DiscordCanary + 0x3d1f0e7)
+                                           #9  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #10 0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #11 0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752211:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f4b889289 uv_cond_wait (DiscordCanary + 0x73df289)
+                                           #3  0x0000558f4b7fbfa8 n/a (DiscordCanary + 0x7351fa8)
+                                           #4  0x0000558f4b7f9dbf n/a (DiscordCanary + 0x734fdbf)
+                                           #5  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #6  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752231:
+                                           #0  0x00007fd64fa9839e epoll_wait (libc.so.6 + 0xff39e)
+                                           #1  0x0000558f483066aa n/a (DiscordCanary + 0x3e5c6aa)
+                                           #2  0x0000558f48303eeb n/a (DiscordCanary + 0x3e59eeb)
+                                           #3  0x0000558f4820dd01 n/a (DiscordCanary + 0x3d63d01)
+                                           #4  0x0000558f481b3704 n/a (DiscordCanary + 0x3d09704)
+                                           #5  0x0000558f4818d6de n/a (DiscordCanary + 0x3ce36de)
+                                           #6  0x0000558f481c90e7 n/a (DiscordCanary + 0x3d1f0e7)
+                                           #7  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #8  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #9  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752224:
+                                           #0  0x00007fd64fa8d37f __poll (libc.so.6 + 0xf437f)
+                                           #1  0x00007fd651023ae8 n/a (libglib-2.0.so.0 + 0xa7ae8)
+                                           #2  0x00007fd650fcd781 g_main_context_iteration (libglib-2.0.so.0 + 0x51781)
+                                           #3  0x00007fd650fcd7d2 n/a (libglib-2.0.so.0 + 0x517d2)
+                                           #4  0x00007fd650ffe0c1 n/a (libglib-2.0.so.0 + 0x820c1)
+                                           #5  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #6  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752237:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f481fedb8 n/a (DiscordCanary + 0x3d54db8)
+                                           #3  0x0000558f48c1748d n/a (DiscordCanary + 0x476d48d)
+                                           #4  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #5  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #6  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752238:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f481fedb8 n/a (DiscordCanary + 0x3d54db8)
+                                           #3  0x0000558f481ff569 n/a (DiscordCanary + 0x3d55569)
+                                           #4  0x0000558f481ff32f n/a (DiscordCanary + 0x3d5532f)
+                                           #5  0x0000558f48174588 n/a (DiscordCanary + 0x3cca588)
+                                           #6  0x0000558f481b3704 n/a (DiscordCanary + 0x3d09704)
+                                           #7  0x0000558f4818d6de n/a (DiscordCanary + 0x3ce36de)
+                                           #8  0x0000558f481c90e7 n/a (DiscordCanary + 0x3d1f0e7)
+                                           #9  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #10 0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #11 0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752239:
+                                           #0  0x00007fd64fa9839e epoll_wait (libc.so.6 + 0xff39e)
+                                           #1  0x0000558f45e0a9a1 n/a (DiscordCanary + 0x19609a1)
+                                           #2  0x0000558f45e0a4c7 n/a (DiscordCanary + 0x19604c7)
+                                           #3  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #4  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752236:
+                                           #0  0x00007fd64fa8fad1 __select (libc.so.6 + 0xf6ad1)
+                                           #1  0x0000558f482047c6 n/a (DiscordCanary + 0x3d5a7c6)
+                                           #2  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #3  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #4  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752240:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f481fedb8 n/a (DiscordCanary + 0x3d54db8)
+                                           #3  0x0000558f481ff569 n/a (DiscordCanary + 0x3d55569)
+                                           #4  0x0000558f481ff32f n/a (DiscordCanary + 0x3d5532f)
+                                           #5  0x0000558f481c4a8a n/a (DiscordCanary + 0x3d1aa8a)
+                                           #6  0x0000558f481c5283 n/a (DiscordCanary + 0x3d1b283)
+                                           #7  0x0000558f481c5004 n/a (DiscordCanary + 0x3d1b004)
+                                           #8  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #9  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #10 0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752241:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f481fedb8 n/a (DiscordCanary + 0x3d54db8)
+                                           #3  0x0000558f481ff569 n/a (DiscordCanary + 0x3d55569)
+                                           #4  0x0000558f481ff32f n/a (DiscordCanary + 0x3d5532f)
+                                           #5  0x0000558f48174588 n/a (DiscordCanary + 0x3cca588)
+                                           #6  0x0000558f481b3704 n/a (DiscordCanary + 0x3d09704)
+                                           #7  0x0000558f4818d6de n/a (DiscordCanary + 0x3ce36de)
+                                           #8  0x0000558f481c90e7 n/a (DiscordCanary + 0x3d1f0e7)
+                                           #9  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #10 0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #11 0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752244:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f4b889289 uv_cond_wait (DiscordCanary + 0x73df289)
+                                           #3  0x0000558f4b8797fa n/a (DiscordCanary + 0x73cf7fa)
+                                           #4  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #5  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752246:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f4b889289 uv_cond_wait (DiscordCanary + 0x73df289)
+                                           #3  0x0000558f4b8797fa n/a (DiscordCanary + 0x73cf7fa)
+                                           #4  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #5  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752248:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f481fedb8 n/a (DiscordCanary + 0x3d54db8)
+                                           #3  0x0000558f481ff569 n/a (DiscordCanary + 0x3d55569)
+                                           #4  0x0000558f481ff32f n/a (DiscordCanary + 0x3d5532f)
+                                           #5  0x0000558f48174588 n/a (DiscordCanary + 0x3cca588)
+                                           #6  0x0000558f481b3704 n/a (DiscordCanary + 0x3d09704)
+                                           #7  0x0000558f4818d6de n/a (DiscordCanary + 0x3ce36de)
+                                           #8  0x0000558f481c90e7 n/a (DiscordCanary + 0x3d1f0e7)
+                                           #9  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #10 0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #11 0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752275:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f481fedb8 n/a (DiscordCanary + 0x3d54db8)
+                                           #3  0x0000558f481ff569 n/a (DiscordCanary + 0x3d55569)
+                                           #4  0x0000558f481ff32f n/a (DiscordCanary + 0x3d5532f)
+                                           #5  0x0000558f481c4a8a n/a (DiscordCanary + 0x3d1aa8a)
+                                           #6  0x0000558f481c5283 n/a (DiscordCanary + 0x3d1b283)
+                                           #7  0x0000558f481c4fd4 n/a (DiscordCanary + 0x3d1afd4)
+                                           #8  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #9  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #10 0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752260:
+                                           #0  0x00007fd64fa9839e epoll_wait (libc.so.6 + 0xff39e)
+                                           #1  0x0000558f483066aa n/a (DiscordCanary + 0x3e5c6aa)
+                                           #2  0x0000558f48303eeb n/a (DiscordCanary + 0x3e59eeb)
+                                           #3  0x0000558f4820dda3 n/a (DiscordCanary + 0x3d63da3)
+                                           #4  0x0000558f481b3704 n/a (DiscordCanary + 0x3d09704)
+                                           #5  0x0000558f4818d6de n/a (DiscordCanary + 0x3ce36de)
+                                           #6  0x0000558f481c90e7 n/a (DiscordCanary + 0x3d1f0e7)
+                                           #7  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #8  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #9  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 2146863:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125574 pthread_cond_timedwait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf574)
+                                           #2  0x0000558f481feed0 n/a (DiscordCanary + 0x3d54ed0)
+                                           #3  0x0000558f481ff540 n/a (DiscordCanary + 0x3d55540)
+                                           #4  0x0000558f481c4a98 n/a (DiscordCanary + 0x3d1aa98)
+                                           #5  0x0000558f481c5283 n/a (DiscordCanary + 0x3d1b283)
+                                           #6  0x0000558f481c4fa4 n/a (DiscordCanary + 0x3d1afa4)
+                                           #7  0x0000558f482022a5 n/a (DiscordCanary + 0x3d582a5)
+                                           #8  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #9  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752247:
+                                           #0  0x00007fd65112b9ba __futex_abstimed_wait_common64 (libpthread.so.0 + 0x159ba)
+                                           #1  0x00007fd651125260 pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0 + 0xf260)
+                                           #2  0x0000558f4b889289 uv_cond_wait (DiscordCanary + 0x73df289)
+                                           #3  0x0000558f4b8797fa n/a (DiscordCanary + 0x73cf7fa)
+                                           #4  0x00007fd65111f299 start_thread (libpthread.so.0 + 0x9299)
+                                           #5  0x00007fd64fa98053 __clone (libc.so.6 + 0xff053)
+                                           
+                                           Stack trace of thread 752176:
+                                           #0  0x00007fd65112890b __close (libpthread.so.0 + 0x1290b)
+                                           #1  0x0000558f481680fe n/a (DiscordCanary + 0x3cbe0fe)
+                                           #2  0x0000558f4820df76 n/a (DiscordCanary + 0x3d63f76)
+                                           #3  0x0000558f481728a2 n/a (DiscordCanary + 0x3cc88a2)
+                                           #4  0x0000558f4687c063 n/a (DiscordCanary + 0x23d2063)
+                                           #5  0x0000558f46863306 n/a (DiscordCanary + 0x23b9306)
+                                           #6  0x0000558f4901ff29 n/a (DiscordCanary + 0x4b75f29)
+                                           #7  0x0000558f467e15d7 n/a (DiscordCanary + 0x23375d7)
+                                           #8  0x0000558f467d66ef n/a (DiscordCanary + 0x232c6ef)
+                                           #9  0x0000558f484a4dc9 n/a (DiscordCanary + 0x3ffadc9)
+                                           #10 0x0000558f484ab121 n/a (DiscordCanary + 0x4001121)
+                                           #11 0x0000558f484aaaf1 n/a (DiscordCanary + 0x4000af1)
+                                           #12 0x0000558f484a312d n/a (DiscordCanary + 0x3ff912d)
+                                           #13 0x0000558f484a38e9 n/a (DiscordCanary + 0x3ff98e9)
+                                           #14 0x0000558f484badca n/a (DiscordCanary + 0x4010dca)
+                                           #15 0x0000558f481a2603 n/a (DiscordCanary + 0x3cf8603)
+                                           #16 0x0000558f481b3114 n/a (DiscordCanary + 0x3d09114)
+                                           #17 0x0000558f481b2ea2 n/a (DiscordCanary + 0x3d08ea2)
+                                           #18 0x0000558f48174a17 n/a (DiscordCanary + 0x3ccaa17)
+                                           #19 0x00007fd650fd002c g_main_context_dispatch (libglib-2.0.so.0 + 0x5402c)
+                                           #20 0x00007fd651023b59 n/a (libglib-2.0.so.0 + 0xa7b59)
+                                           #21 0x00007fd650fcd781 g_main_context_iteration (libglib-2.0.so.0 + 0x51781)
+                                           #22 0x0000558f48174872 n/a (DiscordCanary + 0x3cca872)
+                                           #23 0x0000558f481b3704 n/a (DiscordCanary + 0x3d09704)
+                                           #24 0x0000558f4818d6de n/a (DiscordCanary + 0x3ce36de)
+                                           #25 0x0000558f476834d4 n/a (DiscordCanary + 0x31d94d4)
+                                           #26 0x0000558f476852d2 n/a (DiscordCanary + 0x31db2d2)
+                                           #27 0x0000558f4768080d n/a (DiscordCanary + 0x31d680d)
+                                           #28 0x0000558f47572559 n/a (DiscordCanary + 0x30c8559)
+                                           #29 0x0000558f4757218a n/a (DiscordCanary + 0x30c818a)
+                                           #30 0x0000558f49675a2a n/a (DiscordCanary + 0x51cba2a)
+                                           #31 0x0000558f468e9921 n/a (DiscordCanary + 0x243f921)
+                                           #32 0x0000558f45cd9dfd n/a (DiscordCanary + 0x182fdfd)
+                                           #33 0x00007fd64f9c0b25 __libc_start_main (libc.so.6 + 0x27b25)
+                                           #34 0x0000558f45cd9b2a _start (DiscordCanary + 0x182fb2a)
+May 04 16:15:36 systemd[1]: systemd-coredump@21-2403597-0.service: Deactivated successfully.

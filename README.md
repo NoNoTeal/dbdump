@@ -1,0 +1,1 @@
+"archived" bugs.discord.com using a shitty program i wrote to bypass cloudflare verification thing. lots of things are broken, i don't have the time nor care enough about discord to get a nicer looking archive from this.
