@@ -1,2 +1,0 @@
-JX.install('TypeaheadStaticSource',{extend:'TypeaheadSource',construct:function(data){JX.TypeaheadSource.call(this);this.data=data;},members:{data:null,didChange:function(value){this.matchResults(value);},didStart:function(){for(var
-ii=0;ii<this.data.length;ii++){this.addResult(this.data[ii]);}}}});
