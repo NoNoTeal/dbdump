@@ -1,0 +1,1 @@
+https://discord.com/api/oauth2/authorize?client_id=686809779728941056&scope=identify%20email&redirect_uri=https%3A%2F%2Fbugs.discord.com%2Fauth%2Flogin%2Fdiscord_internal%3Adiscord.com%2F&state=92051f942f5e14fe9cb4e0681862b89dd657cddd&response_type=code&prompt=none
